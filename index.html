@@ -34,17 +34,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .panel:after{right:-1px;bottom:-1px;border-right:3px solid;border-bottom:3px solid}
 .logo{font-family:"Russo One",sans-serif;text-align:center;font-size:clamp(1.55rem,7vw,2rem);letter-spacing:.08em;color:#f4f1f1}
 .logo span{color:var(--red)}
-.sub{text-align:center;color:var(--muted);font: .72rem "Share Tech Mono",monospace;letter-spacing:.22em;margin-top:9px;margin-bottom:28px}
-.section-tag{display:flex;align-items:center;gap:9px;margin-bottom:15px;color:var(--red);font: .75rem "Share Tech Mono",monospace;letter-spacing:.15em}
+.sub{text-align:center;color:var(--muted);font:.72rem "Share Tech Mono",monospace;letter-spacing:.22em;margin-top:9px;margin-bottom:28px}
+.section-tag{display:flex;align-items:center;gap:9px;margin-bottom:15px;color:var(--red);font:.75rem "Share Tech Mono",monospace;letter-spacing:.15em}
 .section-tag:before{content:"";width:7px;height:7px;background:var(--red);box-shadow:0 0 10px var(--red);border-radius:50%}
-.small{display:block;color:var(--muted);font: .72rem "Share Tech Mono",monospace;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
-input{width:100%;height:3.55rem;padding:0 15px;background:rgba(5,5,5,.82);border:1px solid #403237;border-radius:2px;color:#fff;font: .9rem "Share Tech Mono",monospace;letter-spacing:.06em;outline:none}
+.small{display:block;color:var(--muted);font:.72rem "Share Tech Mono",monospace;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
+input{width:100%;height:3.55rem;padding:0 15px;background:rgba(5,5,5,.82);border:1px solid #403237;border-radius:2px;color:#fff;font:.9rem "Share Tech Mono",monospace;letter-spacing:.06em;outline:none}
 input::placeholder{color:#777;letter-spacing:.09em}
 input:focus{border-color:var(--red);box-shadow:0 0 18px rgba(255,0,51,.16)}
-button.primary{width:100%;min-height:3.6rem;margin-top:15px;padding:12px;background:var(--grad);border:1px solid #ff526e;border-radius:2px;color:#080808;font: bold 1rem "Share Tech Mono",monospace;letter-spacing:.06em;box-shadow:var(--glow);transition:transform .15s,filter .2s}
+button.primary{width:100%;min-height:3.6rem;margin-top:15px;padding:12px;background:var(--grad);border:1px solid #ff526e;border-radius:2px;color:#080808;font:bold 1rem "Share Tech Mono",monospace;letter-spacing:.06em;box-shadow:var(--glow);transition:transform .15s,filter .2s}
 button.primary:hover{filter:brightness(1.1)}
 button.primary:active{transform:scale(.98)}
-button.secondary{width:100%;min-height:2.9rem;margin-top:12px;padding:10px;background:#171112;border:1px solid #563039;border-radius:2px;color:#f1dce0;font: .85rem "Share Tech Mono",monospace;letter-spacing:.08em}
+button.secondary{width:100%;min-height:2.9rem;margin-top:12px;padding:10px;background:#171112;border:1px solid #563039;border-radius:2px;color:#f1dce0;font:.85rem "Share Tech Mono",monospace;letter-spacing:.08em}
 button.secondary:active{transform:scale(.985)}
 button.logout{background:#171515;border-color:#3c3032;color:#bcb3b5}
 .info{position:relative;padding:16px 17px;margin-top:13px;background:rgba(5,5,5,.62);border:1px solid #38292d;border-radius:2px}
@@ -52,19 +52,21 @@ button.logout{background:#171515;border-color:#3c3032;color:#bcb3b5}
 .count{color:#ff4a69;font-size:1.65rem}
 .value.name{font-size:1.15rem;color:#fff}
 .keybox{display:none;margin-top:17px;padding:17px 14px;text-align:center;background:linear-gradient(145deg,rgba(55,12,22,.55),rgba(12,8,10,.9));border:1px solid #a2223e;border-radius:2px;animation:rise .3s ease}
-.key{font:1.6rem "Share Tech Mono",monospace;letter-spacing:.13em;color:#ff6a83;margin:12px 0;overflow-wrap:anywhere}
-#error{min-height:20px;color:#ff526e;text-align:center;font: .78rem "Share Tech Mono",monospace;margin-top:12px;letter-spacing:.04em}
-#notice{min-height:18px;color:var(--ok);text-align:center;font: .75rem "Share Tech Mono",monospace;margin-top:9px}
+.key{font:.95rem "Share Tech Mono",monospace;letter-spacing:.09em;line-height:2;color:#ff6a83;margin:12px 0;overflow-wrap:anywhere;white-space:pre-line;text-align:left;max-height:260px;overflow-y:auto}
+#error{min-height:20px;color:#ff526e;text-align:center;font:.78rem "Share Tech Mono",monospace;margin-top:12px;letter-spacing:.04em}
+#notice{min-height:18px;color:var(--ok);text-align:center;font:.75rem "Share Tech Mono",monospace;margin-top:9px}
 .hidden{display:none!important}
-.footer{text-align:center;color:#62595b;font: .65rem "Share Tech Mono",monospace;letter-spacing:.12em;margin-top:25px}
+.footer{text-align:center;color:#62595b;font:.65rem "Share Tech Mono",monospace;letter-spacing:.12em;margin-top:25px}
 .dashboard-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:21px;padding-bottom:16px;border-bottom:1px solid #38272c}
-.mini-brand{font: .9rem "Russo One",sans-serif;letter-spacing:.09em}
-.mini-brand span{display:block;color:var(--red);font: .62rem "Share Tech Mono",monospace;letter-spacing:.16em;margin-top:5px}
-.status{color:var(--ok);font: .68rem "Share Tech Mono",monospace;letter-spacing:.1em;white-space:nowrap}
+.mini-brand{font:.9rem "Russo One",sans-serif;letter-spacing:.09em}
+.mini-brand span{display:block;color:var(--red);font:.62rem "Share Tech Mono",monospace;letter-spacing:.16em;margin-top:5px}
+.status{color:var(--ok);font:.68rem "Share Tech Mono",monospace;letter-spacing:.1em;white-space:nowrap}
 .status:before{content:"●";margin-right:6px}
 #dashboard .section-tag{margin-top:6px}
+.quantity-box{margin-top:17px}
+.quantity-box input{height:3.2rem}
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media(max-width:360px){.panel{padding:22px 16px}.key{font-size:1.3rem}.value.name{font-size:1rem}}
+@media(max-width:360px){.panel{padding:22px 16px}.key{font-size:.85rem}.value.name{font-size:1rem}}
 </style>
 </head>
 <body>
@@ -75,7 +77,7 @@ button.logout{background:#171515;border-color:#3c3032;color:#bcb3b5}
  <section id="login">
   <div class="section-tag">RESELLER AUTHENTICATION</div>
   <label class="small" for="password">RESELLER PASSWORD</label>
-  <input id="password" type="password" placeholder="ENTER YOUR PASSWORD" autocomplete="off" autocapitalize="characters">
+  <input id="password" type="password" placeholder="ENTER YOUR PASSWORD" autocomplete="off">
   <button class="primary" id="loginBtn">LOGIN&nbsp; →</button>
   <div id="error" role="status" aria-live="polite"></div>
  </section>
@@ -85,25 +87,36 @@ button.logout{background:#171515;border-color:#3c3032;color:#bcb3b5}
    <div class="mini-brand">TAHA RESELLER<span>CONTROL PANEL</span></div>
    <div class="status">AUTHORIZED</div>
   </div>
+
   <div class="section-tag">DISTRIBUTOR OVERVIEW</div>
+
   <div class="info">
    <span class="small">RESELLER NAME</span>
    <div class="value name" id="resellerName">---</div>
   </div>
+
   <div class="info">
    <span class="small">AVAILABLE KEYS</span>
    <div class="value count" id="remaining">0</div>
   </div>
-  <button class="primary" id="generateBtn">＋ &nbsp; GENERATE KEY</button>
+
+  <div class="quantity-box">
+   <label class="small" for="quantity">HOW MANY KEYS DO YOU WANT?</label>
+   <input id="quantity" type="number" min="1" step="1" value="1" placeholder="ENTER NUMBER OF KEYS">
+  </div>
+
+  <button class="primary" id="generateBtn">＋ &nbsp; GENERATE KEYS</button>
 
   <div class="keybox" id="keybox">
-   <span class="small">YOUR GENERATED KEY</span>
+   <span class="small">YOUR GENERATED KEYS</span>
    <div class="key" id="generatedKey"></div>
-   <button class="secondary" id="copyBtn">▣ &nbsp; COPY KEY</button>
+   <button class="secondary" id="copyBtn">▣ &nbsp; COPY ALL KEYS</button>
    <div id="notice" role="status" aria-live="polite"></div>
   </div>
+
   <button class="secondary logout" id="logoutBtn">LOGOUT</button>
  </section>
+
  <div class="footer">TAHA RESELLER PANEL © 2026<br>ALL RIGHTS RESERVED.</div>
 </main>
 
@@ -141,14 +154,25 @@ const distributors = {
  "654424","505488","615697","319204","820930","245176","944109","669781","317209","337903",
  "979860","103779","944988","339348","507388","901837","452732","562110","267916","140899",
  "136866","306640","436051","771788","724927"
- ]
- 
+ ],
 
+ ISMAILVIP: [
+ "583921","746205","192837","864219","305718",
+ "927461","451083","638592","210746","795314",
+ "326859","581472","943027","167395","804631",
+ "259748","672183","418926","735204","906512",
+ "143869","529317","861450","294681","657923"
+ ]
+};
+
+const resellerNames = {
+ ISMAILVIP: "Ismailvip"
 };
 
 const STORAGE_KEY = "taha_reseller_used_keys_v1";
+
 let current = null;
-let generated = null;
+let generated = [];
 
 const $ = id => document.getElementById(id);
 
@@ -156,85 +180,152 @@ function getUsedKeys(){
  try{
   const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
   return Array.isArray(value) ? value : [];
- }catch(e){ return []; }
+ }catch(e){
+  return [];
+ }
 }
+
 function saveUsedKeys(keys){
  localStorage.setItem(STORAGE_KEY, JSON.stringify(keys));
 }
+
+function getAvailableKeys(){
+ if(!current) return [];
+ const used = getUsedKeys();
+ return distributors[current].filter(
+  key => !used.includes(current + ":" + key)
+ );
+}
+
 function login(){
  const pass = $("password").value.trim().toUpperCase();
+
  if(!Object.prototype.hasOwnProperty.call(distributors, pass)){
   $("error").textContent = "INVALID PASSWORD — TRY AGAIN";
   $("password").focus();
   return;
  }
+
  current = pass;
- generated = null;
+ generated = [];
+
  $("error").textContent = "";
  $("login").classList.add("hidden");
  $("dashboard").classList.remove("hidden");
- $("resellerName").textContent = current;
+
+ $("resellerName").textContent =
+  resellerNames[current] || current;
+
  $("keybox").style.display = "none";
+ $("quantity").value = 1;
+
  updateCount();
 }
+
 function updateCount(){
  if(!current) return;
- const used = getUsedKeys();
- const available = distributors[current].filter(key => !used.includes(current + ":" + key));
+
+ const available = getAvailableKeys();
  $("remaining").textContent = available.length;
+
+ $("quantity").max = available.length;
+
+ if(Number($("quantity").value) > available.length){
+  $("quantity").value = available.length || 1;
+ }
 }
+
 function generate(){
  if(!current) return;
- const used = getUsedKeys();
- const available = distributors[current].filter(key => !used.includes(current + ":" + key));
+
+ const available = getAvailableKeys();
+ const quantity = Number($("quantity").value);
+
+ if(!Number.isInteger(quantity) || quantity < 1){
+  alert("PLEASE ENTER A VALID NUMBER");
+  return;
+ }
+
  if(!available.length){
   $("keybox").style.display = "none";
   alert("NO KEYS AVAILABLE");
   updateCount();
   return;
  }
- const key = available[0];
- used.push(current + ":" + key);
+
+ if(quantity > available.length){
+  alert("NOT ENOUGH KEYS! AVAILABLE: " + available.length);
+  return;
+ }
+
+ const selectedKeys = available.slice(0, quantity);
+
+ const used = getUsedKeys();
+
+ selectedKeys.forEach(key => {
+  used.push(current + ":" + key);
+ });
+
  saveUsedKeys(used);
- generated = key;
- $("generatedKey").textContent = key;
+
+ generated = selectedKeys;
+
+ $("generatedKey").textContent = generated.join("\n");
  $("keybox").style.display = "block";
  $("notice").textContent = "";
+
  updateCount();
 }
+
 async function copyKey(){
- if(!generated) return;
+ if(!generated.length) return;
+
+ const text = generated.join("\n");
+
  try{
   if(navigator.clipboard && window.isSecureContext){
-   await navigator.clipboard.writeText(generated);
+   await navigator.clipboard.writeText(text);
   }else{
    const area = document.createElement("textarea");
-   area.value = generated;
+   area.value = text;
    area.style.position = "fixed";
    area.style.opacity = "0";
    document.body.appendChild(area);
    area.select();
+
    const ok = document.execCommand("copy");
    area.remove();
+
    if(!ok) throw new Error("Copy failed");
   }
-  $("notice").textContent = "KEY COPIED SUCCESSFULLY";
+
+  $("notice").textContent = "ALL KEYS COPIED SUCCESSFULLY";
  }catch(e){
-  $("notice").textContent = "COPY FAILED — SELECT THE KEY MANUALLY";
+  $("notice").textContent = "COPY FAILED — SELECT THE KEYS MANUALLY";
  }
 }
+
 function logout(){
  current = null;
- generated = null;
+ generated = [];
+
  $("dashboard").classList.add("hidden");
  $("login").classList.remove("hidden");
+
  $("password").value = "";
+ $("quantity").value = 1;
+
  $("keybox").style.display = "none";
  $("error").textContent = "";
  $("notice").textContent = "";
 }
+
 $("loginBtn").addEventListener("click", login);
-$("password").addEventListener("keydown", e => { if(e.key === "Enter") login(); });
+
+$("password").addEventListener("keydown", e => {
+ if(e.key === "Enter") login();
+});
+
 $("generateBtn").addEventListener("click", generate);
 $("copyBtn").addEventListener("click", copyKey);
 $("logoutBtn").addEventListener("click", logout);

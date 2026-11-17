@@ -1,210 +1,241 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#080808">
-<title>TAHA RESELLER PANEL</title>
+<title>TAHA RESELLER — Official Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}
+:root{
+ --bg:#080808;--red:#ff1744;--deep:#8b001b;--fg:#f4f1f1;--muted:#858080;
+ --card:#111112;--border:#302326;--ok:#43d98b;
+ --grad:linear-gradient(180deg,#ff244b,#ed002f);
+ --glow:0 0 0 1px rgba(255,23,68,.55),0 12px 34px -12px rgba(255,0,51,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{min-height:100%;background:var(--bg);color:var(--fg);font-family:"Rajdhani",sans-serif}
 body{
- margin:0;min-height:100vh;background:#080808;color:white;
- font-family:Arial,sans-serif;display:flex;justify-content:center;
- align-items:center;padding:20px;
+ min-height:100dvh;overflow-x:hidden;
+ background:radial-gradient(100% 55% at 50% 0%,rgba(130,0,20,.28),transparent 70%),linear-gradient(180deg,#10090b,#050505 65%);
+ display:flex;justify-content:center;align-items:center;padding:22px 16px;
 }
-.panel{
- width:100%;max-width:420px;background:#101010;
- border:1px solid #292929;border-radius:18px;
- padding:25px;box-shadow:0 15px 50px #000;
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;
+ background-image:linear-gradient(rgba(255,23,68,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(255,23,68,.065) 1px,transparent 1px);
+ background-size:44px 44px;mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);
 }
-.logo{text-align:center;font-size:24px;font-weight:900;
- letter-spacing:2px;margin-bottom:8px}
-.logo span{color:#b24cff}
-.sub{text-align:center;color:#777;font-size:11px;
- letter-spacing:3px;margin-bottom:28px}
-input{
- width:100%;padding:16px;background:#080808;
- border:1px solid #333;border-radius:10px;
- color:white;outline:none;font-size:15px;
-}
-input:focus{border-color:#a34aff}
-button{
- width:100%;padding:15px;border:0;border-radius:10px;
- background:linear-gradient(90deg,#7725cf,#b34cff);
- color:white;font-weight:bold;font-size:14px;
- cursor:pointer;margin-top:15px;
-}
-button:active{transform:scale(.98)}
-.info{
- background:#080808;border:1px solid #292929;
- padding:17px;border-radius:12px;margin:15px 0;
-}
-.small{color:#777;font-size:11px;letter-spacing:1px}
-.value{font-size:20px;font-weight:bold;margin-top:7px}
-.count{color:#bd69ff}
-.keybox{
- display:none;background:#171020;border:1px solid #8039b6;
- padding:15px;border-radius:10px;margin-top:18px;
- text-align:center;word-break:break-all;
-}
-.key{font-size:23px;font-weight:bold;letter-spacing:3px;
- color:#d39aff;margin:10px 0}
-.copy{background:#29202f}
-.logout{background:#242424}
-#error{color:#ff5555;text-align:center;font-size:13px;margin-top:12px}
-.hidden{display:none}
-.footer{text-align:center;color:#555;font-size:10px;margin-top:25px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.panel{position:relative;width:100%;max-width:440px;padding:25px 22px 20px;background:linear-gradient(160deg,rgba(26,20,21,.97),rgba(10,9,10,.98));border:1px solid #38272c;border-radius:2px;box-shadow:0 18px 55px rgba(0,0,0,.65),0 0 30px rgba(255,0,45,.06)}
+.panel:before,.panel:after{content:"";position:absolute;width:18px;height:18px;border-color:var(--red);pointer-events:none}
+.panel:before{top:-1px;left:-1px;border-top:3px solid;border-left:3px solid}
+.panel:after{right:-1px;bottom:-1px;border-right:3px solid;border-bottom:3px solid}
+.logo{font-family:"Russo One",sans-serif;text-align:center;font-size:clamp(1.55rem,7vw,2rem);letter-spacing:.08em;color:#f4f1f1}
+.logo span{color:var(--red)}
+.sub{text-align:center;color:var(--muted);font: .72rem "Share Tech Mono",monospace;letter-spacing:.22em;margin-top:9px;margin-bottom:28px}
+.section-tag{display:flex;align-items:center;gap:9px;margin-bottom:15px;color:var(--red);font: .75rem "Share Tech Mono",monospace;letter-spacing:.15em}
+.section-tag:before{content:"";width:7px;height:7px;background:var(--red);box-shadow:0 0 10px var(--red);border-radius:50%}
+.small{display:block;color:var(--muted);font: .72rem "Share Tech Mono",monospace;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
+input{width:100%;height:3.55rem;padding:0 15px;background:rgba(5,5,5,.82);border:1px solid #403237;border-radius:2px;color:#fff;font: .9rem "Share Tech Mono",monospace;letter-spacing:.06em;outline:none}
+input::placeholder{color:#777;letter-spacing:.09em}
+input:focus{border-color:var(--red);box-shadow:0 0 18px rgba(255,0,51,.16)}
+button.primary{width:100%;min-height:3.6rem;margin-top:15px;padding:12px;background:var(--grad);border:1px solid #ff526e;border-radius:2px;color:#080808;font: bold 1rem "Share Tech Mono",monospace;letter-spacing:.06em;box-shadow:var(--glow);transition:transform .15s,filter .2s}
+button.primary:hover{filter:brightness(1.1)}
+button.primary:active{transform:scale(.98)}
+button.secondary{width:100%;min-height:2.9rem;margin-top:12px;padding:10px;background:#171112;border:1px solid #563039;border-radius:2px;color:#f1dce0;font: .85rem "Share Tech Mono",monospace;letter-spacing:.08em}
+button.secondary:active{transform:scale(.985)}
+button.logout{background:#171515;border-color:#3c3032;color:#bcb3b5}
+.info{position:relative;padding:16px 17px;margin-top:13px;background:rgba(5,5,5,.62);border:1px solid #38292d;border-radius:2px}
+.value{font:1.2rem "Russo One",sans-serif;letter-spacing:.035em;margin-top:7px;overflow-wrap:anywhere}
+.count{color:#ff4a69;font-size:1.65rem}
+.value.name{font-size:1.15rem;color:#fff}
+.keybox{display:none;margin-top:17px;padding:17px 14px;text-align:center;background:linear-gradient(145deg,rgba(55,12,22,.55),rgba(12,8,10,.9));border:1px solid #a2223e;border-radius:2px;animation:rise .3s ease}
+.key{font:1.6rem "Share Tech Mono",monospace;letter-spacing:.13em;color:#ff6a83;margin:12px 0;overflow-wrap:anywhere}
+#error{min-height:20px;color:#ff526e;text-align:center;font: .78rem "Share Tech Mono",monospace;margin-top:12px;letter-spacing:.04em}
+#notice{min-height:18px;color:var(--ok);text-align:center;font: .75rem "Share Tech Mono",monospace;margin-top:9px}
+.hidden{display:none!important}
+.footer{text-align:center;color:#62595b;font: .65rem "Share Tech Mono",monospace;letter-spacing:.12em;margin-top:25px}
+.dashboard-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:21px;padding-bottom:16px;border-bottom:1px solid #38272c}
+.mini-brand{font: .9rem "Russo One",sans-serif;letter-spacing:.09em}
+.mini-brand span{display:block;color:var(--red);font: .62rem "Share Tech Mono",monospace;letter-spacing:.16em;margin-top:5px}
+.status{color:var(--ok);font: .68rem "Share Tech Mono",monospace;letter-spacing:.1em;white-space:nowrap}
+.status:before{content:"●";margin-right:6px}
+#dashboard .section-tag{margin-top:6px}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:360px){.panel{padding:22px 16px}.key{font-size:1.3rem}.value.name{font-size:1rem}}
 </style>
 </head>
 <body>
-<div class="panel">
+<main class="panel">
  <div class="logo">TAHA <span>RESELLER</span></div>
- <div class="sub">PREMIUM KEY GENERATOR</div>
+ <div class="sub"> // OFFICIAL KEY GENERATOR_ </div>
 
- <div id="login">
-  <div class="small">RESELLER PASSWORD</div>
-  <input id="password" type="password" placeholder="Enter your password">
-  <button onclick="login()">LOGIN</button>
-  <div id="error"></div>
- </div>
+ <section id="login">
+  <div class="section-tag">RESELLER AUTHENTICATION</div>
+  <label class="small" for="password">RESELLER PASSWORD</label>
+  <input id="password" type="password" placeholder="ENTER YOUR PASSWORD" autocomplete="off" autocapitalize="characters">
+  <button class="primary" id="loginBtn">LOGIN&nbsp; →</button>
+  <div id="error" role="status" aria-live="polite"></div>
+ </section>
 
- <div id="dashboard" class="hidden">
+ <section id="dashboard" class="hidden">
+  <div class="dashboard-head">
+   <div class="mini-brand">TAHA RESELLER<span>CONTROL PANEL</span></div>
+   <div class="status">AUTHORIZED</div>
+  </div>
+  <div class="section-tag">DISTRIBUTOR OVERVIEW</div>
   <div class="info">
-   <div class="small">RESELLER NAME</div>
-   <div class="value" id="resellerName">---</div>
+   <span class="small">RESELLER NAME</span>
+   <div class="value name" id="resellerName">---</div>
   </div>
   <div class="info">
-   <div class="small">AVAILABLE KEYS</div>
+   <span class="small">AVAILABLE KEYS</span>
    <div class="value count" id="remaining">0</div>
   </div>
-  <button onclick="generate()">GENERATE KEY</button>
+  <button class="primary" id="generateBtn">＋ &nbsp; GENERATE KEY</button>
 
   <div class="keybox" id="keybox">
-   <div class="small">YOUR GENERATED KEY</div>
+   <span class="small">YOUR GENERATED KEY</span>
    <div class="key" id="generatedKey"></div>
-   <button class="copy" onclick="copyKey()">COPY KEY</button>
+   <button class="secondary" id="copyBtn">▣ &nbsp; COPY KEY</button>
+   <div id="notice" role="status" aria-live="polite"></div>
   </div>
-  <button class="logout" onclick="logout()">LOGOUT</button>
- </div>
- <div class="footer">TAHA RESELLER PANEL © 2026</div>
-</div>
+  <button class="secondary logout" id="logoutBtn">LOGOUT</button>
+ </section>
+ <div class="footer">TAHA RESELLER PANEL © 2026<br>ALL RIGHTS RESERVED.</div>
+</main>
 
 <script>
 const distributors = {
  ZIXOSTOR: [
-"646746","798523","812766","185624","249271","384599",
-"336562","453973","557741","595668","102047","459051",
-"366553","234592","644662","507844","830964","156252",
-"722706","422315","792958","177892","983598","577185",
-"338189","782674","655862","694747","816468","459864",
-"910225"
+ "646746","798523","812766","185624","249271","384599","336562","453973","557741","595668",
+ "102047","459051","366553","234592","644662","507844","830964","156252","722706","422315",
+ "792958","177892","983598","577185","338189","782674","655862","694747","816468","459864","910225"
  ],
  SADIX: [
-"351360","581387","187697","750984","110802","339450",
-"885490","301124","288887","723435","500498","279948",
-"662181","692480","961260","922241","255360","526356",
-"355439","798797","821094","619206","849167","970698",
-"594123","808401","483994","352746","541577"
+ "351360","581387","187697","750984","110802","339450","885490","301124","288887","723435",
+ "500498","279948","662181","692480","961260","922241","255360","526356","355439","798797",
+ "821094","619206","849167","970698","594123","808401","483994","352746","541577"
  ],
  BRAZILI: [
-"504991","472921","604073","700984","375886","760910",
-"572286","698783","617104","700935","615823","228201",
-"914795","513132","609842","382844","864835","807081",
-"223901"
+ "504991","472921","604073","700984","375886","760910","572286","698783","617104","700935",
+ "615823","228201","914795","513132","609842","382844","864835","807081","223901"
  ],
- RESSELER2: [
-"842905","702503","255802","182314","122577","329770",
-"989916","460154","858867","164755","909520","735328",
-"113755","428236","987222","340175","380917","905143",
-"557386","596543","291942","434762","642014","322584",
-"671630","220102","388145","562783","376857","946205"
+ AKAZA: [
+ "842905","702503","255802","182314","122577","329770","989916","460154","858867","164755",
+ "909520","735328","113755","428236","987222","340175","380917","905143","557386","596543",
+ "291942","434762","642014","322584","671630","220102","388145","562783","376857","946205"
  ],
- RESSELER4: [
-"947695","462950","250742","500788","722330","108227",
-"239164","954612","774521","160530","451581","753327",
-"911415","690641","301603","665029","618712","118564",
-"573270","375168","509783","203074","609550","442911",
-"609065","561162"
+ HAMO: [
+ "947695","462950","250742","500788","722330","108227","239164","954612","774521","160530",
+ "451581","753327","911415","690641","301603","665029","618712","118564","573270","375168",
+ "509783","203074","609550","442911","609065","561162"
  ],
  OWNER: [
-"201678","901870","942957","548540","743694","816456",
-"455129","194816","661310","306558","340197","482128",
-"459679","309659","764888","760664","409675","742171",
-"834306","902778","640511","640299","100766","544590",
-"785151","339331","118518","424079","446242","272788",
-"465652","989462","695126","239654","758121","259395",
-"284756","198860","707911","318979","654424","505488",
-"615697","319204","820930","245176","944109","669781",
-"317209","337903","979860","103779","944988","339348",
-"507388","901837","452732","562110","267916","140899",
-"136866","306640","436051","771788","724927"
+ "201678","901870","942957","548540","743694","816456","455129","194816","661310","306558",
+ "340197","482128","459679","309659","764888","760664","409675","742171","834306","902778",
+ "640511","640299","100766","544590","785151","339331","118518","424079","446242","272788",
+ "465652","989462","695126","239654","758121","259395","284756","198860","707911","318979",
+ "654424","505488","615697","319204","820930","245176","944109","669781","317209","337903",
+ "979860","103779","944988","339348","507388","901837","452732","562110","267916","140899",
+ "136866","306640","436051","771788","724927"
  ]
 };
 
+const STORAGE_KEY = "taha_reseller_used_keys_v1";
 let current = null;
 let generated = null;
 
+const $ = id => document.getElementById(id);
+
+function getUsedKeys(){
+ try{
+  const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  return Array.isArray(value) ? value : [];
+ }catch(e){ return []; }
+}
+function saveUsedKeys(keys){
+ localStorage.setItem(STORAGE_KEY, JSON.stringify(keys));
+}
 function login(){
- const pass=document.getElementById("password").value.trim().toUpperCase();
- if(!distributors[pass]){
-  document.getElementById("error").textContent="INVALID PASSWORD";
+ const pass = $("password").value.trim().toUpperCase();
+ if(!Object.prototype.hasOwnProperty.call(distributors, pass)){
+  $("error").textContent = "INVALID PASSWORD — TRY AGAIN";
+  $("password").focus();
   return;
  }
- current=pass;
- document.getElementById("login").classList.add("hidden");
- document.getElementById("dashboard").classList.remove("hidden");
- document.getElementById("resellerName").textContent=current;
+ current = pass;
+ generated = null;
+ $("error").textContent = "";
+ $("login").classList.add("hidden");
+ $("dashboard").classList.remove("hidden");
+ $("resellerName").textContent = current;
+ $("keybox").style.display = "none";
  updateCount();
 }
-
-function usedKeys(){
- try{return JSON.parse(localStorage.getItem("used_keys")||"[]")}
- catch(e){return []}
-}
-
 function updateCount(){
- const used=usedKeys();
- const available=distributors[current].filter(k=>!used.includes(current+":"+k));
- document.getElementById("remaining").textContent=available.length;
+ if(!current) return;
+ const used = getUsedKeys();
+ const available = distributors[current].filter(key => !used.includes(current + ":" + key));
+ $("remaining").textContent = available.length;
 }
-
 function generate(){
- const used=usedKeys();
- const available=distributors[current].filter(k=>!used.includes(current+":"+k));
+ if(!current) return;
+ const used = getUsedKeys();
+ const available = distributors[current].filter(key => !used.includes(current + ":" + key));
  if(!available.length){
+  $("keybox").style.display = "none";
   alert("NO KEYS AVAILABLE");
+  updateCount();
   return;
  }
- const key=available[0];
- used.push(current+":"+key);
- localStorage.setItem("used_keys",JSON.stringify(used));
- generated=key;
- document.getElementById("generatedKey").textContent=key;
- document.getElementById("keybox").style.display="block";
+ const key = available[0];
+ used.push(current + ":" + key);
+ saveUsedKeys(used);
+ generated = key;
+ $("generatedKey").textContent = key;
+ $("keybox").style.display = "block";
+ $("notice").textContent = "";
  updateCount();
 }
-
-function copyKey(){
- if(!generated)return;
- if(navigator.clipboard && window.isSecureContext){
-  navigator.clipboard.writeText(generated).then(()=>alert("KEY COPIED"));
- }else{
-  const t=document.createElement("textarea");
-  t.value=generated;document.body.appendChild(t);
-  t.select();document.execCommand("copy");t.remove();
-  alert("KEY COPIED");
+async function copyKey(){
+ if(!generated) return;
+ try{
+  if(navigator.clipboard && window.isSecureContext){
+   await navigator.clipboard.writeText(generated);
+  }else{
+   const area = document.createElement("textarea");
+   area.value = generated;
+   area.style.position = "fixed";
+   area.style.opacity = "0";
+   document.body.appendChild(area);
+   area.select();
+   const ok = document.execCommand("copy");
+   area.remove();
+   if(!ok) throw new Error("Copy failed");
+  }
+  $("notice").textContent = "KEY COPIED SUCCESSFULLY";
+ }catch(e){
+  $("notice").textContent = "COPY FAILED — SELECT THE KEY MANUALLY";
  }
 }
-
 function logout(){
- current=null;generated=null;
- document.getElementById("dashboard").classList.add("hidden");
- document.getElementById("login").classList.remove("hidden");
- document.getElementById("password").value="";
- document.getElementById("keybox").style.display="none";
- document.getElementById("error").textContent="";
+ current = null;
+ generated = null;
+ $("dashboard").classList.add("hidden");
+ $("login").classList.remove("hidden");
+ $("password").value = "";
+ $("keybox").style.display = "none";
+ $("error").textContent = "";
+ $("notice").textContent = "";
 }
+$("loginBtn").addEventListener("click", login);
+$("password").addEventListener("keydown", e => { if(e.key === "Enter") login(); });
+$("generateBtn").addEventListener("click", generate);
+$("copyBtn").addEventListener("click", copyKey);
+$("logoutBtn").addEventListener("click", logout);
 </script>
 </body>
 </html>

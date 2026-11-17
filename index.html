@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#080808">
 <title>TAHA RESELLER — Official Panel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+
 <style>
 :root{
- --bg:#080808;--red:#ff1744;--deep:#8b001b;--fg:#f4f1f1;--muted:#858080;
- --card:#111112;--border:#302326;--ok:#43d98b;
+ --bg:#080808;--red:#ff1744;--fg:#f4f1f1;
+ --muted:#858080;--ok:#43d98b;
  --grad:linear-gradient(180deg,#ff244b,#ed002f);
- --glow:0 0 0 1px rgba(255,23,68,.55),0 12px 34px -12px rgba(255,0,51,.55);
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{min-height:100%;background:var(--bg);color:var(--fg);font-family:"Rajdhani",sans-serif}
@@ -25,151 +24,376 @@ body{
 body:before{
  content:"";position:fixed;inset:0;pointer-events:none;
  background-image:linear-gradient(rgba(255,23,68,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(255,23,68,.065) 1px,transparent 1px);
- background-size:44px 44px;mask-image:linear-gradient(to bottom,#000 0%,transparent 90%);
+ background-size:44px 44px;
 }
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-.panel{position:relative;width:100%;max-width:440px;padding:25px 22px 20px;background:linear-gradient(160deg,rgba(26,20,21,.97),rgba(10,9,10,.98));border:1px solid #38272c;border-radius:2px;box-shadow:0 18px 55px rgba(0,0,0,.65),0 0 30px rgba(255,0,45,.06)}
-.panel:before,.panel:after{content:"";position:absolute;width:18px;height:18px;border-color:var(--red);pointer-events:none}
-.panel:before{top:-1px;left:-1px;border-top:3px solid;border-left:3px solid}
-.panel:after{right:-1px;bottom:-1px;border-right:3px solid;border-bottom:3px solid}
-.logo{font-family:"Russo One",sans-serif;text-align:center;font-size:clamp(1.55rem,7vw,2rem);letter-spacing:.08em;color:#f4f1f1}
+.panel{
+ position:relative;width:100%;max-width:440px;padding:25px 22px 20px;
+ background:linear-gradient(160deg,rgba(26,20,21,.97),rgba(10,9,10,.98));
+ border:1px solid #38272c;box-shadow:0 18px 55px #000a;border-radius:2px;
+}
+.logo{text-align:center;font:clamp(1.55rem,7vw,2rem) "Russo One";letter-spacing:.08em}
 .logo span{color:var(--red)}
-.sub{text-align:center;color:var(--muted);font:.72rem "Share Tech Mono",monospace;letter-spacing:.22em;margin-top:9px;margin-bottom:28px}
-.section-tag{display:flex;align-items:center;gap:9px;margin-bottom:15px;color:var(--red);font:.75rem "Share Tech Mono",monospace;letter-spacing:.15em}
-.section-tag:before{content:"";width:7px;height:7px;background:var(--red);box-shadow:0 0 10px var(--red);border-radius:50%}
-.small{display:block;color:var(--muted);font:.72rem "Share Tech Mono",monospace;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
-input{width:100%;height:3.55rem;padding:0 15px;background:rgba(5,5,5,.82);border:1px solid #403237;border-radius:2px;color:#fff;font:.9rem "Share Tech Mono",monospace;letter-spacing:.06em;outline:none}
-input::placeholder{color:#777;letter-spacing:.09em}
-input:focus{border-color:var(--red);box-shadow:0 0 18px rgba(255,0,51,.16)}
-button.primary{width:100%;min-height:3.6rem;margin-top:15px;padding:12px;background:var(--grad);border:1px solid #ff526e;border-radius:2px;color:#080808;font:bold 1rem "Share Tech Mono",monospace;letter-spacing:.06em;box-shadow:var(--glow);transition:transform .15s,filter .2s}
-button.primary:hover{filter:brightness(1.1)}
-button.primary:active{transform:scale(.98)}
-button.secondary{width:100%;min-height:2.9rem;margin-top:12px;padding:10px;background:#171112;border:1px solid #563039;border-radius:2px;color:#f1dce0;font:.85rem "Share Tech Mono",monospace;letter-spacing:.08em}
-button.secondary:active{transform:scale(.985)}
-button.logout{background:#171515;border-color:#3c3032;color:#bcb3b5}
-.info{position:relative;padding:16px 17px;margin-top:13px;background:rgba(5,5,5,.62);border:1px solid #38292d;border-radius:2px}
-.value{font:1.2rem "Russo One",sans-serif;letter-spacing:.035em;margin-top:7px;overflow-wrap:anywhere}
+.sub{text-align:center;color:var(--muted);font:.72rem "Share Tech Mono";letter-spacing:.22em;margin:9px 0 28px}
+.section-tag{display:flex;align-items:center;gap:9px;margin-bottom:15px;color:var(--red);font:.75rem "Share Tech Mono";letter-spacing:.15em}
+.section-tag:before{content:"";width:7px;height:7px;background:var(--red);border-radius:50%;box-shadow:0 0 10px var(--red)}
+.small{display:block;color:var(--muted);font:.72rem "Share Tech Mono";letter-spacing:.13em;margin-bottom:9px}
+input{
+ width:100%;height:3.55rem;padding:0 15px;background:#080808;
+ border:1px solid #403237;border-radius:2px;color:white;
+ font:.9rem "Share Tech Mono";outline:none;
+}
+input:focus{border-color:var(--red);box-shadow:0 0 18px #ff003326}
+button.primary{
+ width:100%;min-height:3.6rem;margin-top:15px;padding:12px;
+ background:var(--grad);border:1px solid #ff526e;color:#080808;
+ font:bold 1rem "Share Tech Mono";letter-spacing:.06em;
+ box-shadow:0 0 20px #ff174433;
+}
+button.secondary{
+ width:100%;min-height:2.9rem;margin-top:12px;padding:10px;
+ background:#171112;border:1px solid #563039;color:#f1dce0;
+ font:.85rem "Share Tech Mono";
+}
+.info{padding:16px 17px;margin-top:13px;background:#050505a0;border:1px solid #38292d}
+.value{font:1.2rem "Russo One";margin-top:7px;overflow-wrap:anywhere}
 .count{color:#ff4a69;font-size:1.65rem}
-.value.name{font-size:1.15rem;color:#fff}
-.keybox{display:none;margin-top:17px;padding:17px 14px;text-align:center;background:linear-gradient(145deg,rgba(55,12,22,.55),rgba(12,8,10,.9));border:1px solid #a2223e;border-radius:2px;animation:rise .3s ease}
-.key{font:.95rem "Share Tech Mono",monospace;letter-spacing:.09em;line-height:2;color:#ff6a83;margin:12px 0;overflow-wrap:anywhere;white-space:pre-line;text-align:left;max-height:260px;overflow-y:auto}
-#error{min-height:20px;color:#ff526e;text-align:center;font:.78rem "Share Tech Mono",monospace;margin-top:12px;letter-spacing:.04em}
-#notice{min-height:18px;color:var(--ok);text-align:center;font:.75rem "Share Tech Mono",monospace;margin-top:9px}
 .hidden{display:none!important}
-.footer{text-align:center;color:#62595b;font:.65rem "Share Tech Mono",monospace;letter-spacing:.12em;margin-top:25px}
-.dashboard-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:21px;padding-bottom:16px;border-bottom:1px solid #38272c}
-.mini-brand{font:.9rem "Russo One",sans-serif;letter-spacing:.09em}
-.mini-brand span{display:block;color:var(--red);font:.62rem "Share Tech Mono",monospace;letter-spacing:.16em;margin-top:5px}
-.status{color:var(--ok);font:.68rem "Share Tech Mono",monospace;letter-spacing:.1em;white-space:nowrap}
-.status:before{content:"●";margin-right:6px}
-#dashboard .section-tag{margin-top:6px}
+#error,#notice{text-align:center;font:.78rem "Share Tech Mono";margin-top:12px}
+#error{color:#ff526e}
+#notice{color:var(--ok)}
+.footer{text-align:center;color:#62595b;font:.65rem "Share Tech Mono";letter-spacing:.12em;margin-top:25px}
+.dashboard-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:21px;padding-bottom:16px;border-bottom:1px solid #38272c}
+.mini-brand{font:.9rem "Russo One"}
+.mini-brand span{display:block;color:var(--red);font:.62rem "Share Tech Mono";margin-top:5px}
+.status{color:var(--ok);font:.68rem "Share Tech Mono"}
+.status:before{content:"● ";}
+
+.keybox{
+ display:none;margin-top:17px;padding:14px;
+ background:linear-gradient(145deg,#370c1655,#0c080a);
+ border:1px solid #a2223e;
+}
+.key-list{display:flex;flex-direction:column;gap:8px;margin-top:12px;max-height:340px;overflow-y:auto}
+.key-row{
+ display:flex;align-items:center;justify-content:space-between;gap:8px;
+ padding:10px;background:#080808;border:1px solid #39262b;
+}
+.key-text{
+ flex:1;min-width:0;color:#ff6a83;
+ font:.78rem "Share Tech Mono";overflow-wrap:anywhere;
+}
+.copy-one{
+ flex-shrink:0;padding:8px 10px;background:#301019;
+ border:1px solid #a2223e;color:#ff7189;
+ font:.68rem "Share Tech Mono";
+}
+.copy-one:active{background:#a2223e;color:white}
 .quantity-box{margin-top:17px}
-.quantity-box input{height:3.2rem}
-@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media(max-width:360px){.panel{padding:22px 16px}.key{font-size:.85rem}.value.name{font-size:1rem}}
+#quantity{height:3.2rem}
 </style>
 </head>
+
 <body>
 <main class="panel">
- <div class="logo">TAHA <span>RESELLER</span></div>
- <div class="sub"> // OFFICIAL KEY GENERATOR_ </div>
 
- <section id="login">
-  <div class="section-tag">RESELLER AUTHENTICATION</div>
-  <label class="small" for="password">RESELLER PASSWORD</label>
-  <input id="password" type="password" placeholder="ENTER YOUR PASSWORD" autocomplete="off">
-  <button class="primary" id="loginBtn">LOGIN&nbsp; →</button>
-  <div id="error" role="status" aria-live="polite"></div>
- </section>
+<div class="logo">TAHA <span>RESELLER</span></div>
+<div class="sub">// OFFICIAL KEY GENERATOR_</div>
 
- <section id="dashboard" class="hidden">
-  <div class="dashboard-head">
-   <div class="mini-brand">TAHA RESELLER<span>CONTROL PANEL</span></div>
-   <div class="status">AUTHORIZED</div>
+<section id="login">
+ <div class="section-tag">RESELLER AUTHENTICATION</div>
+ <label class="small" for="password">RESELLER PASSWORD</label>
+ <input id="password" type="password" placeholder="ENTER YOUR PASSWORD" autocomplete="off">
+ <button class="primary" id="loginBtn">LOGIN →</button>
+ <div id="error"></div>
+</section>
+
+<section id="dashboard" class="hidden">
+
+ <div class="dashboard-head">
+  <div class="mini-brand">TAHA RESELLER
+   <span>CONTROL PANEL</span>
   </div>
+  <div class="status">AUTHORIZED</div>
+ </div>
 
-  <div class="section-tag">DISTRIBUTOR OVERVIEW</div>
+ <div class="section-tag">DISTRIBUTOR OVERVIEW</div>
 
-  <div class="info">
-   <span class="small">RESELLER NAME</span>
-   <div class="value name" id="resellerName">---</div>
-  </div>
+ <div class="info">
+  <span class="small">RESELLER NAME</span>
+  <div class="value" id="resellerName">---</div>
+ </div>
 
-  <div class="info">
-   <span class="small">AVAILABLE KEYS</span>
-   <div class="value count" id="remaining">0</div>
-  </div>
+ <div class="info">
+  <span class="small">AVAILABLE KEYS</span>
+  <div class="value count" id="remaining">0</div>
+ </div>
 
-  <div class="quantity-box">
-   <label class="small" for="quantity">HOW MANY KEYS DO YOU WANT?</label>
-   <input id="quantity" type="number" min="1" step="1" value="1" placeholder="ENTER NUMBER OF KEYS">
-  </div>
+ <div class="quantity-box">
+  <label class="small" for="quantity">HOW MANY KEYS DO YOU WANT?</label>
+  <input id="quantity" type="number" min="1" step="1" value="1">
+ </div>
 
-  <button class="primary" id="generateBtn">＋ &nbsp; GENERATE KEYS</button>
+ <button class="primary" id="generateBtn">＋ GENERATE KEYS</button>
 
-  <div class="keybox" id="keybox">
-   <span class="small">YOUR GENERATED KEYS</span>
-   <div class="key" id="generatedKey"></div>
-   <button class="secondary" id="copyBtn">▣ &nbsp; COPY ALL KEYS</button>
-   <div id="notice" role="status" aria-live="polite"></div>
-  </div>
+ <div class="keybox" id="keybox">
+  <span class="small">YOUR GENERATED KEYS</span>
+  <div class="key-list" id="generatedKeys"></div>
+  <button class="secondary" id="copyBtn">COPY ALL KEYS</button>
+  <div id="notice"></div>
+ </div>
 
-  <button class="secondary logout" id="logoutBtn">LOGOUT</button>
- </section>
+ <button class="secondary" id="logoutBtn">LOGOUT</button>
+</section>
 
- <div class="footer">TAHA RESELLER PANEL © 2026<br>ALL RIGHTS RESERVED.</div>
+<div class="footer">
+ TAHA RESELLER PANEL © 2026<br>
+ ALL RIGHTS RESERVED.
+</div>
+
 </main>
 
 <script>
+
+// DISTRIBUTOR KEYS
+
 const distributors = {
- ZIXOSTOR: [
- "646746","798523","812766","185624","249271","384599","336562","453973","557741","595668",
- "102047","459051","366553","234592","644662","507844","830964","156252","722706","422315",
- "792958","177892","983598","577185","338189","782674","655862","694747","816468","459864","910225"
- ],
- SADIX: [
- "351360","581387","187697","750984","110802","339450","885490","301124","288887","723435",
- "500498","279948","662181","692480","961260","922241","255360","526356","355439","798797",
- "821094","619206","849167","970698","594123","808401","483994","352746","541577"
- ],
- BRAZILI: [
- "504991","472921","604073","700984","375886","760910","572286","698783","617104","700935",
- "615823","228201","914795","513132","609842","382844","864835","807081","223901"
- ],
- AKAZA: [
- "842905","702503","255802","182314","122577","329770","989916","460154","858867","164755",
- "909520","735328","113755","428236","987222","340175","380917","905143","557386","596543",
- "291942","434762","642014","322584","671630","220102","388145","562783","376857","946205"
- ],
- HAMO: [
- "947695","462950","250742","500788","722330","108227","239164","954612","774521","160530",
- "451581","753327","911415","690641","301603","665029","618712","118564","573270","375168",
- "509783","203074","609550","442911","609065","561162"
- ],
- OWNER: [
- "201678","901870","942957","548540","743694","816456","455129","194816","661310","306558",
- "340197","482128","459679","309659","764888","760664","409675","742171","834306","902778",
- "640511","640299","100766","544590","785151","339331","118518","424079","446242","272788",
- "465652","989462","695126","239654","758121","259395","284756","198860","707911","318979",
- "654424","505488","615697","319204","820930","245176","944109","669781","317209","337903",
- "979860","103779","944988","339348","507388","901837","452732","562110","267916","140899",
- "136866","306640","436051","771788","724927"
- ],
 
- ISMAILVIP: [
- "583921","746205","192837","864219","305718",
- "927461","451083","638592","210746","795314",
- "326859","581472","943027","167395","804631",
- "259748","672183","418926","735204","906512",
- "143869","529317","861450","294681","657923"
- ]
+OWNER: `
+TAHA - ALONE - F4K9
+TAHA - ALONE - X8P2
+TAHA - ALONE - M7Q5
+TAHA - ALONE - Z3N6
+TAHA - ALONE - B9R4
+TAHA - ALONE - K2W8
+TAHA - ALONE - H5T1
+TAHA - ALONE - P6Y3
+TAHA - ALONE - D8F7
+TAHA - ALONE - V4J2
+TAHA - ALONE - Q9L5
+TAHA - ALONE - C3X8
+TAHA - ALONE - N7B4
+TAHA - ALONE - R2M6
+TAHA - ALONE - W5K9
+TAHA - ALONE - J8P3
+TAHA - ALONE - G4Z7
+TAHA - ALONE - L6D2
+TAHA - ALONE - Y9H5
+TAHA - ALONE - T3Q8
+TAHA - ALONE - A7N4
+TAHA - ALONE - F2V9
+TAHA - ALONE - X5C3
+TAHA - ALONE - M8R6
+TAHA - ALONE - Z1K7
+TAHA - ALONE - B4P9
+TAHA - ALONE - K7Y2
+TAHA - ALONE - H3W8
+TAHA - ALONE - P9D5
+TAHA - ALONE - D2J6
+`,
+
+AKAZA: `
+TAHA - ALONE - V8Q4
+TAHA - ALONE - Q5F1
+TAHA - ALONE - C9M3
+TAHA - ALONE - N2X7
+TAHA - ALONE - R6B8
+TAHA - ALONE - W1T5
+TAHA - ALONE - J4L9
+TAHA - ALONE - G8P2
+TAHA - ALONE - L3Z6
+TAHA - ALONE - Y5D1
+TAHA - ALONE - T9K4
+TAHA - ALONE - A2H7
+TAHA - ALONE - F6Q3
+TAHA - ALONE - X1N8
+TAHA - ALONE - M4V5
+TAHA - ALONE - Z7C2
+TAHA - ALONE - B3R9
+TAHA - ALONE - K8J4
+TAHA - ALONE - H2P6
+TAHA - ALONE - P5W1
+TAHA - ALONE - D9Y3
+TAHA - ALONE - V2L7
+TAHA - ALONE - Q6Z4
+TAHA - ALONE - C1K8
+TAHA - ALONE - N5F2
+TAHA - ALONE - R9X6
+TAHA - ALONE - W3B1
+TAHA - ALONE - J7M5
+TAHA - ALONE - G2T9
+TAHA - ALONE - L8Q3
+`,
+
+BRAZILI: `
+TAHA - ALONE - Y4P7
+TAHA - ALONE - T1D6
+TAHA - ALONE - A9V2
+TAHA - ALONE - F3C5
+TAHA - ALONE - X7R1
+TAHA - ALONE - M2K8
+TAHA - ALONE - Z5J3
+TAHA - ALONE - B8W6
+TAHA - ALONE - K1Y9
+TAHA - ALONE - H6L4
+TAHA - ALONE - P3Q7
+TAHA - ALONE - D5N2
+TAHA - ALONE - V9F8
+TAHA - ALONE - Q2M5
+TAHA - ALONE - C7X1
+TAHA - ALONE - N4B9
+TAHA - ALONE - R1T6
+TAHA - ALONE - W8P3
+TAHA - ALONE - J2Z7
+TAHA - ALONE - G5K4
+TAHA - ALONE - L9H1
+TAHA - ALONE - Y3V8
+TAHA - ALONE - T6C2
+TAHA - ALONE - A4R7
+TAHA - ALONE - F8J3
+TAHA - ALONE - X2W5
+TAHA - ALONE - M9D1
+TAHA - ALONE - Z4Q6
+TAHA - ALONE - B1N8
+TAHA - ALONE - K5F3
+`,
+
+HAMO: `
+TAHA - ALONE - H9X2
+TAHA - ALONE - P4B7
+TAHA - ALONE - D1T8
+TAHA - ALONE - V6M3
+TAHA - ALONE - Q8Y5
+TAHA - ALONE - C2L9
+TAHA - ALONE - N6J4
+TAHA - ALONE - R3P8
+TAHA - ALONE - W9Z2
+TAHA - ALONE - J5H7
+TAHA - ALONE - G1V4
+TAHA - ALONE - L7C3
+TAHA - ALONE - Y2R9
+TAHA - ALONE - T8K5
+TAHA - ALONE - A5Q1
+TAHA - ALONE - F9B6
+TAHA - ALONE - X3M7
+TAHA - ALONE - M6P2
+TAHA - ALONE - Z9W4
+TAHA - ALONE - B2D8
+TAHA - ALONE - K4X1
+TAHA - ALONE - H7N5
+TAHA - ALONE - P1R9
+TAHA - ALONE - D6Q3
+TAHA - ALONE - V3J8
+TAHA - ALONE - Q7T2
+TAHA - ALONE - C5F9
+TAHA - ALONE - N1Y6
+TAHA - ALONE - R8L4
+TAHA - ALONE - W2K7
+`,
+
+SADIX: `
+TAHA - ALONE - J9C5
+TAHA - ALONE - G3P1
+TAHA - ALONE - L5V8
+TAHA - ALONE - Y7B2
+TAHA - ALONE - T4X9
+TAHA - ALONE - A8M3
+TAHA - ALONE - F1D7
+TAHA - ALONE - X6Q4
+TAHA - ALONE - M3H9
+TAHA - ALONE - Z8T1
+TAHA - ALONE - B5J6
+TAHA - ALONE - K9P2
+TAHA - ALONE - H4W7
+TAHA - ALONE - P8L3
+TAHA - ALONE - D3Y5
+TAHA - ALONE - V7N1
+TAHA - ALONE - Q4R8
+TAHA - ALONE - C6B2
+TAHA - ALONE - N9K5
+TAHA - ALONE - R4F1
+TAHA - ALONE - W7M6
+TAHA - ALONE - J1Q9
+TAHA - ALONE - G6X3
+TAHA - ALONE - L2P7
+TAHA - ALONE - Y8D4
+TAHA - ALONE - T5V1
+TAHA - ALONE - A3Z6
+TAHA - ALONE - F7K2
+TAHA - ALONE - X4P9
+TAHA - ALONE - M1W5
+`,
+
+ZIXOSTOR: `
+TAHA - ALONE - Z6B3
+TAHA - ALONE - B7Q8
+TAHA - ALONE - K3N1
+TAHA - ALONE - H8R4
+TAHA - ALONE - P2F6
+TAHA - ALONE - D7X9
+TAHA - ALONE - V1C5
+TAHA - ALONE - Q3J7
+TAHA - ALONE - C8M4
+TAHA - ALONE - N3T9
+TAHA - ALONE - R5Y2
+TAHA - ALONE - W4L8
+TAHA - ALONE - J6D1
+TAHA - ALONE - G9B5
+TAHA - ALONE - L1Q4
+TAHA - ALONE - Y6P3
+TAHA - ALONE - T2N8
+TAHA - ALONE - A6F9
+TAHA - ALONE - F5X2
+TAHA - ALONE - X9K4
+TAHA - ALONE - M5R1
+TAHA - ALONE - Z2V7
+TAHA - ALONE - B6C3
+TAHA - ALONE - K6T8
+TAHA - ALONE - H1M9
+TAHA - ALONE - P7D4
+TAHA - ALONE - D4W2
+TAHA - ALONE - V5Q8
+TAHA - ALONE - Q1B6
+TAHA - ALONE - C4N7
+`,
+
+EGALO: `
+TAHA - ALONE - N8P2
+TAHA - ALONE - R7J5
+TAHA - ALONE - W6F3
+TAHA - ALONE - J3X9
+TAHA - ALONE - G7L1
+TAHA - ALONE - L4Y6
+TAHA - ALONE - Y1T8
+TAHA - ALONE - T7M3
+TAHA - ALONE - A1K5
+TAHA - ALONE - F4R8
+TAHA - ALONE - X8D2
+TAHA - ALONE - M7J6
+TAHA - ALONE - Z3P1
+TAHA - ALONE - B9V5
+TAHA - ALONE - K2C7
+TAHA - ALONE - H5Q4
+TAHA - ALONE - P6N8
+TAHA - ALONE - D8M1
+TAHA - ALONE - V4X9
+TAHA - ALONE - Q9W3
+TAHA - ALONE - C3R6
+TAHA - ALONE - N7L2
+TAHA - ALONE - R2F8
+TAHA - ALONE - W5D4
+TAHA - ALONE - J8B1
+TAHA - ALONE - G4T7
+TAHA - ALONE - L6P9
+TAHA - ALONE - Y9C2
+TAHA - ALONE - T3H5
+`
+
 };
 
-const resellerNames = {
- ISMAILVIP: "Ismailvip"
-};
+// LOGIN AND SYSTEM
 
-const STORAGE_KEY = "taha_reseller_used_keys_v1";
+const STORAGE_KEY = "taha_reseller_used_keys_v2";
 
 let current = null;
 let generated = [];
@@ -178,157 +402,170 @@ const $ = id => document.getElementById(id);
 
 function getUsedKeys(){
  try{
-  const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-  return Array.isArray(value) ? value : [];
- }catch(e){
-  return [];
- }
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]");
+  return Array.isArray(data)?data:[];
+ }catch(e){return []}
 }
 
-function saveUsedKeys(keys){
- localStorage.setItem(STORAGE_KEY, JSON.stringify(keys));
+function saveUsedKeys(data){
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
 }
 
 function getAvailableKeys(){
- if(!current) return [];
- const used = getUsedKeys();
- return distributors[current].filter(
-  key => !used.includes(current + ":" + key)
- );
+ if(!current)return [];
+ const used=getUsedKeys();
+ return distributors[current].trim().split("\n")
+ .map(x=>x.trim()).filter(Boolean)
+ .filter(key=>!used.includes(current+":"+key));
 }
 
 function login(){
- const pass = $("password").value.trim().toUpperCase();
+ const pass=$("password").value.trim().toUpperCase();
 
- if(!Object.prototype.hasOwnProperty.call(distributors, pass)){
-  $("error").textContent = "INVALID PASSWORD — TRY AGAIN";
-  $("password").focus();
+ if(!Object.prototype.hasOwnProperty.call(distributors,pass)){
+  $("error").textContent="INVALID PASSWORD — TRY AGAIN";
   return;
  }
 
- current = pass;
- generated = [];
+ current=pass;
+ generated=[];
 
- $("error").textContent = "";
+ $("error").textContent="";
  $("login").classList.add("hidden");
  $("dashboard").classList.remove("hidden");
-
- $("resellerName").textContent =
-  resellerNames[current] || current;
-
- $("keybox").style.display = "none";
- $("quantity").value = 1;
+ $("resellerName").textContent=current;
+ $("keybox").style.display="none";
+ $("quantity").value=1;
 
  updateCount();
 }
 
 function updateCount(){
- if(!current) return;
-
- const available = getAvailableKeys();
- $("remaining").textContent = available.length;
-
- $("quantity").max = available.length;
-
- if(Number($("quantity").value) > available.length){
-  $("quantity").value = available.length || 1;
- }
+ const available=getAvailableKeys();
+ $("remaining").textContent=available.length;
+ $("quantity").max=available.length;
 }
 
 function generate(){
- if(!current) return;
+ if(!current)return;
 
- const available = getAvailableKeys();
- const quantity = Number($("quantity").value);
+ const available=getAvailableKeys();
+ const quantity=Number($("quantity").value);
 
- if(!Number.isInteger(quantity) || quantity < 1){
+ if(!Number.isInteger(quantity)||quantity<1){
   alert("PLEASE ENTER A VALID NUMBER");
   return;
  }
 
- if(!available.length){
-  $("keybox").style.display = "none";
-  alert("NO KEYS AVAILABLE");
-  updateCount();
+ if(quantity>available.length){
+  alert("NOT ENOUGH KEYS! AVAILABLE: "+available.length);
   return;
  }
 
- if(quantity > available.length){
-  alert("NOT ENOUGH KEYS! AVAILABLE: " + available.length);
-  return;
- }
+ generated=available.slice(0,quantity);
 
- const selectedKeys = available.slice(0, quantity);
+ const used=getUsedKeys();
 
- const used = getUsedKeys();
-
- selectedKeys.forEach(key => {
-  used.push(current + ":" + key);
+ generated.forEach(key=>{
+  used.push(current+":"+key);
  });
 
  saveUsedKeys(used);
 
- generated = selectedKeys;
-
- $("generatedKey").textContent = generated.join("\n");
- $("keybox").style.display = "block";
- $("notice").textContent = "";
-
+ renderKeys();
+ $("keybox").style.display="block";
+ $("notice").textContent="";
  updateCount();
 }
 
-async function copyKey(){
- if(!generated.length) return;
+// DISPLAY EACH KEY WITH ITS OWN COPY BUTTON
 
- const text = generated.join("\n");
+function renderKeys(){
+ const container=$("generatedKeys");
+ container.innerHTML="";
 
+ generated.forEach((key,index)=>{
+
+  const row=document.createElement("div");
+  row.className="key-row";
+
+  const text=document.createElement("div");
+  text.className="key-text";
+  text.textContent=key;
+
+  const button=document.createElement("button");
+  button.className="copy-one";
+  button.textContent="COPY";
+
+  button.addEventListener("click",async()=>{
+   const success=await copyText(key);
+   button.textContent=success?"COPIED":"FAILED";
+   setTimeout(()=>button.textContent="COPY",1500);
+  });
+
+  row.appendChild(text);
+  row.appendChild(button);
+  container.appendChild(row);
+ });
+}
+
+// COPY FUNCTION
+
+async function copyText(text){
  try{
-  if(navigator.clipboard && window.isSecureContext){
+  if(navigator.clipboard&&window.isSecureContext){
    await navigator.clipboard.writeText(text);
   }else{
-   const area = document.createElement("textarea");
-   area.value = text;
-   area.style.position = "fixed";
-   area.style.opacity = "0";
+   const area=document.createElement("textarea");
+   area.value=text;
+   area.style.position="fixed";
+   area.style.opacity="0";
    document.body.appendChild(area);
    area.select();
-
-   const ok = document.execCommand("copy");
+   const success=document.execCommand("copy");
    area.remove();
-
-   if(!ok) throw new Error("Copy failed");
+   if(!success)throw new Error("Copy failed");
   }
-
-  $("notice").textContent = "ALL KEYS COPIED SUCCESSFULLY";
+  return true;
  }catch(e){
-  $("notice").textContent = "COPY FAILED — SELECT THE KEYS MANUALLY";
+  return false;
  }
 }
 
+async function copyAll(){
+ if(!generated.length)return;
+
+ const success=await copyText(generated.join("\n"));
+
+ $("notice").textContent=success?
+ "ALL KEYS COPIED SUCCESSFULLY":
+ "COPY FAILED";
+}
+
 function logout(){
- current = null;
- generated = [];
+ current=null;
+ generated=[];
 
  $("dashboard").classList.add("hidden");
  $("login").classList.remove("hidden");
 
- $("password").value = "";
- $("quantity").value = 1;
-
- $("keybox").style.display = "none";
- $("error").textContent = "";
- $("notice").textContent = "";
+ $("password").value="";
+ $("quantity").value=1;
+ $("keybox").style.display="none";
+ $("error").textContent="";
+ $("notice").textContent="";
 }
 
-$("loginBtn").addEventListener("click", login);
+$("loginBtn").addEventListener("click",login);
 
-$("password").addEventListener("keydown", e => {
- if(e.key === "Enter") login();
+$("password").addEventListener("keydown",e=>{
+ if(e.key==="Enter")login();
 });
 
-$("generateBtn").addEventListener("click", generate);
-$("copyBtn").addEventListener("click", copyKey);
-$("logoutBtn").addEventListener("click", logout);
+$("generateBtn").addEventListener("click",generate);
+$("copyBtn").addEventListener("click",copyAll);
+$("logoutBtn").addEventListener("click",logout);
+
 </script>
 </body>
 </html>
